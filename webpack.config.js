@@ -11,8 +11,19 @@ module.exports = {
     filename: '[name][contenthash].js',
     clean: true
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          fullySpecified: false,
+        },
+        use: ['babel-loader']
+      },
       {
         test: /\.css$/i,
         use: [
@@ -24,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack app',
+      title: 'React app',
       filename: 'index.html',
       template: 'src/index.html'
     })
