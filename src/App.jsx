@@ -1,7 +1,7 @@
 import React from 'react'
 
 const App = () => (
-  <div>React works!!!</div>
+  <h1>React works!!!</h1>
 )
 
 export default App
